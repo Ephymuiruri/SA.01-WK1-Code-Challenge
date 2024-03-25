@@ -18,3 +18,4 @@ function speedCheck(speed){
     }  
 }
 console.log(speedCheck(80))
+
