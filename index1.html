@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport"content="width=device-width, initial-scale=1.0">
+        <title>My Grade Calculator</title>
+    </head>
+    <body>
+        <form action="" method="" id="formGrades">
+            <div id="nameSection">
+            <label for="name">Enter Student's name</label>
+            <input type="text" name="name" id="name" required />
+        </div>
+        <div id="markSection">
+            <label for="marks">Enter Student's name</label>
+            <input type="number" name="marks" id="marks" required/>
+            <button type="button" onclick="Gradeoutput()">Calculate grade</button>
+        </div>
+        </form>
+
+
+        <script>
+        function Gradeoutpout() {
+//get user input from the form created in html file.//
+let name = document.getElementById("name").value;
+let marks =document.getElementById("marks").value
+// initialze variables to hold marks and grade//
+let grade;
+// validate marks entered if between o and 100//
+
+if (marks <0 || marks >100 ){
+alert('enter student marks between o and 100')
+return}
+
+//calculate and assign correct grade to marks entered//
+    if (marks >79){
+    grade = "A"
+    }
+    else if(marks>=60){
+        grade="B"
+    }
+    else if(marks>=49){
+        grade="C"
+    }
+    else if(marks>=40){
+        grade = "D"
+    }
+    else{
+        grade ="E"
+    }
+    //Display Grade//
+    alert(name+"'s Gradeis: "+ grade)
+}
+
+        </script>
+    </body>
+</html>
