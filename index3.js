@@ -5,21 +5,21 @@ let taxedIncome= basicSalary+benefits
 let payee, NHIF, NSSF;
 // calculate tax payment based on salary bracket//
 switch(true){
-      case taxedIncome<= 24000:
-        payee= 0.1*taxedIncome
-        break
-      case taxedIncome<= 32333:
-        payee=0.25*taxedIncome
-        break
+        case taxedIncome<= 24000:
+            payee= 0.1*taxedIncome
+            break
+        case taxedIncome<= 32333:
+            payee=0.25*taxedIncome
+            break
         case taxedIncome<=500000:
             payee=0.3*taxedIncome
             break
-            case taxedIncome<=800000:
-                payee=0.325*taxedIncome
-                break
-                default:
-                payee=0.35*taxedIncome
-                break
+        case taxedIncome<=800000:
+            payee=0.325*taxedIncome
+            break
+        default:
+            payee=0.35*taxedIncome
+            break
 }
 // calculate NHIF payment based on salary bracket//
 switch(true){
@@ -45,7 +45,7 @@ switch(true){
     NHIF=850
     break
     case taxedIncome<=34999:
-    NHIF=39999
+    NHIF=900
     break
     case taxedIncome<=39999:
     NHIF=950
@@ -84,12 +84,13 @@ if (taxedIncome<=7000){
    NSSF=0.06*36000
 }
 //Net salary after all deductions//
-let netSalary=( taxedIncome-(payee+NHIF+NSSF) )
+let netSalary=(taxedIncome-(payee+NHIF+NSSF))
 
-    return {taxedIncome, 
+    return {
+    taxedIncome, 
     NHIF, 
     payee,
     NSSF, 
     netSalary}
 }
-console.log(salary(30000,25000))
+console.log(salary(44000,8000))
